@@ -1,0 +1,77 @@
+<div class="main-col bg_menu lazyload" data-was-processed="true" style="background: #3fccd2;">
+  <div class="container">
+    <div class="std">
+      <div class="best-seller-pro menu" style="visibility: visible">
+        <div class="slider-items-products" >
+          <div class="new_title lt clear_pd">
+            <h2><a href="#">Hộp Bút</a></h2>
+          </div>
+          <div id="featured-slider" class="hidden-buttons">
+            <div
+              class="
+                slider-items
+                slick_margin
+                slider-width-col6
+                slick-initialized slick-slider
+              "
+            >
+              <div aria-live="polite" class="slick-list draggable" style="text-align: center;">
+                <div
+                  class="slick-track"
+                  role="listbox"
+                  style="
+                    opacity: 1;
+                    width: 848px;
+                    transform: translate3d(0px, 0px, 0px);
+                  "
+                >
+                <div
+                    class="
+                      sock_slide
+                      slider-items
+                      slick_margin slick-initialized slick-slider
+                    "
+                  >
+                    <div class="bestsale-product-container w-100">
+                      <div class="col-lg-3 col-sm-12 bestsale-item" *ngFor="let products of productsList ">
+                        <div
+                          class="
+                            product-item-inner
+                            bg-white
+                            w-100
+                            d-flex
+                            flex-column
+                            justify-content-around
+                            align-items-center
+                          "
+                          style="height: 80% !important;"
+                        >
+                        <div class="img-container w-100">
+                          <img [src]="products.hinhminhhoa " class="img-fluid" alt="">
+                        </div>
+                        <div class="product-name w-100 text-center mt-5">
+                          <span style="text-decoration: none; font-size: 15px; font-weight: bold;">{{products.tensanpham}}</span>
+                        </div>
+                        <div class="product-price d-flex justify-content-around align-items-center">
+                          <span class="current-price">{{products.gia}}₫</span>
+                        </div>
+                          <div class="list-btn d-flex">
+                            <button class="product-btn" (click)="selectProduct(products.masanpham)">Chi tiết</button>
+                            <button class="product-btn" (click)="AddProduct(products.masanpham)">Mua hàng</button>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <button class="product-btn" style="margin: auto !important;" (click)="resetProduct(slsp+8)">Xem Thêm</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

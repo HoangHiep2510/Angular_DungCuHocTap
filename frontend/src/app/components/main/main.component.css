@@ -1,0 +1,75 @@
+#carouselExampleIndicators li.active
+{
+  background-color: #ff7600 !important;
+}
+
+
+.bestsale-item{
+  height: 380px;
+}
+
+.product-item-inner{
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+.product-item-inner:hover{
+  box-shadow: 0 .5rem 1.2rem rgba(0,0,0,.25)!important;
+}
+.product-item-inner:hover .list-btn{
+  width: 100%;
+  opacity: 100%;
+}
+.product-item-inner:hover .product-btn{
+  width: 50%;
+  opacity: 100%;
+}
+.list-btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0%;
+  width: 20%;
+  transition: all ease-in-out .4s;
+}
+
+.product-btn{
+  height: 50px;
+  background: white;
+  border-width: 2px;
+  border-color: tomato;
+  border-style: solid;
+  margin: 0 1px;
+  color: tomato;
+  font-size: 15px;
+  font-weight: 700;
+  width: 20%;
+  opacity: 0%;
+  transition: all ease-in-out .4s;
+}
+.product-btn:hover{
+  color: white;
+  background: tomato;
+}
+
+.product-name a{
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.img-container{
+  height: 50%;
+}
+.product-price .current-price{
+  font-size: 17px;
+  font-weight: 800;
+  color: red;
+}
+
+.product-price .old-price{
+  font-size: 15px;
+  font-weight: 800;
+  color:rgba(0,0,0, .2);
+}

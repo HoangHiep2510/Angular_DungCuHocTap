@@ -1,0 +1,6 @@
+<ul class="cate_1" style="font-weight: bold;">
+  <h2 style="text-align: center;">Balo</h2>
+  <li class="level0- level0" *ngFor="let p of productOT">
+    <a [routerLink]="['/products', 'loaisanpham', p.tenloaisp]"><span>{{p.tenloaisp}}</span></a>
+  </li>
+</ul>

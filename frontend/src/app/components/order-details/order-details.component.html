@@ -1,0 +1,70 @@
+  <div class="col-main cart_desktop_page" *ngIf="cartData.data[0].numInCart === 0;">
+    <div class="cart page_cart row">
+        <div class="col-lg-12 col-xl-12 col-md-12">
+            <h1 class="title_cart" style="text-align:center">
+                <span>Giỏ hàng của bạn</span>
+            </h1>
+        </div>
+        <div class="formcartpage col-lg-12 col-xl-12 col-md-12 margin-bottom-0">
+            <div class="bg-scroll">
+                <div class="cart-tbody">
+                    <div class="text-center my-5">
+                        <h4>Không có mặt hàng nào!</h4>
+                        <a [routerLink]="['/']" class="btn btn-warning" style="font-size: 15px;"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="container" *ngIf="cartData.data[0].numInCart !== 0;">
+   <table id="cart" class="table table-hover table-condensed" style="font-size: 15px; margin-top: 20px;">
+    <thead>
+     <tr style="background-color: #ff7600; color: aliceblue; font-size: 17px;">
+      <th style="width:50%">Tên sản phẩm</th>
+      <th style="width:10%">Giá</th>
+      <th style="width:8%">Số lượng</th>
+      <th style="width:22%" class="text-center">Thành tiền</th>
+      <th style="width:10%"> </th>
+     </tr>
+    </thead>
+    <tbody *ngFor="let c of cartData.data; let i=index">
+      <tr>
+     <td>
+      <div class="row">
+       <div class="col-sm-2 hidden-xs"><img src="{{c.product.hinhminhhoa}}" alt="{{c.product.tensanpham}}" class="img-responsive" width="100">
+       </div>
+       <div class="col-sm-10">
+        <h2 class="nomargin">{{c.product.tensanpham}}</h2>
+       </div>
+      </div>
+     </td>
+     <td>{{c.product.gia}} đ</td>
+     <td>
+        <input type="number" id="number" style="text-align: center;" [value]="c.numInCart" readonly [max]="c.product.soluong" class="check_number_here input-text number-sidebar input_pop input_pop">
+        <button class="increase_pop items-count btn-plus" style="width: 50% !important;" type="button" id="increase" (click)="ChangeQuantity(i, true)"><i class="fas fa-plus-circle">+</i></button>
+        <button class="reduced_pop items-count btn-minus" style="width: 50% !important;" type="button" id="decrease" (click)="ChangeQuantity(i, false)"><i class="fas fa-minus-circle">-</i></button>
+     </td>
+     <td class="text-center">{{cartService.CalculateSubTotal(i)}} đ</td>
+     <td class="actions" style="text-align: center; padding-left: 42.5px;" >
+      <div style="width: 8%" class="a-center">
+        <span class="remove-itemx remove-item-cart" title="Xóa">
+          <span><button (click)="cartService.DeleteProductFromCart(i)" style="width: 25px; height: 25px;" >X</button></span>
+        </span>
+    </div>
+     </td>
+    </tr>
+    </tbody>
+    <tfoot>
+     <tr>
+      <td><a [routerLink]="['/']" class="btn btn-warning" style="font-size: 15px;"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+      </td>
+      <td colspan="2" class="hidden-xs"> </td>
+      <td class="hidden-xs text-center"><strong>Tổng: {{cartTotal}} ₫</strong>
+      </td>
+      <td><a href="/" class="btn btn-success btn-block" style="font-size: 15px;">Thanh toán <i class="fa fa-angle-right"></i></a>
+      </td>
+     </tr>
+    </tfoot>
+   </table>
+  </div>

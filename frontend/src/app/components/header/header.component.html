@@ -1,0 +1,82 @@
+<header id="hedix" style="background-color: #3fccd2">
+  <div class="container mb_c">
+      <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 z-indexlogo bv">
+              <div class="search-box text-left">
+                  <form action="/search" method="get" id="search_mini_form">
+                      <input type="text" class="change_pl" placeholder="Tìm kiếm" value="" maxlength="70" name="query" id="search">
+                      <button class="btn btn-default  search-btn-bg"> <img src="/assets/images/icon/search.png"></button>
+                  </form>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 z-indexlogo">
+              <div class="logo">
+                  <a href="#">
+                      <img alt="Mew Furniture" src="/assets/images/icon/logo.png">
+                  </a>
+              </div>
+              <div class="hidden-desktop" id="mobile-menu">
+                  <div class="navmenu">
+                      <div class="menutop">
+                          <div class="toggle">
+                              <div class="line_mn">
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-xs-12 mobi_bt vf">
+              <div class="search-box text-right">
+                  <div class="fix-cart">
+                      <div class="l_o hidden-xs hidden-sm">
+                          <img src="/assets/images/icon/iconLogin.png">
+                          <div class="box_log">
+                              <div class="login"><span><a [routerLink]="['/dangnhap']">Đăng nhập</a></span></div>
+                              <div class="res"><span><a [routerLink]="['/dangky']">Đăng ký</a></span></div>
+                          </div>
+                      </div>
+                      <div class="top-cart-contain pull-right">
+                          <!-- Top Cart -->
+                          <div class="mini-cart">
+                              <div class="basket dropdown-toggle">
+                                  <a [routerLink]="['/orderdetails']" title="Giỏ hàng">
+                                      <img src="/assets/images/icon/iconShopping.png">
+                                      <div class="cart-box">
+                                          <span id="cart-total">
+                                              <b class="count_item_pr">{{cartData.data[0].numInCart !== 0 ? cartData.data.length
+                                                : 0}}</b>
+                                          </span>
+                                      </div>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="na hidden-xs hidden-sm" style="background-color:rgba(20, 5, 5, 0.2)">
+      <div class="container mb_c">
+          <div class="row">
+              <div class="col-xs-12 mobi_bt">
+                  <nav class="mb0">
+  <div class="nav-inner clearfix">
+      <ul id="nav" class=" nav_main">
+          <li class="level0 parent active"><a href="#"><span>Trang chủ</span></a></li>
+          <li class="level0 parent "><a href="#"><span>Tin tức</span></a></li>
+          <li class="level0 parent "><a href="#"><span>Giới thiệu</span></a></li>
+          <li class="level0 parent "><a href="#"><span>Liên hệ</span></a></li>
+      </ul>
+  </div>
+  </nav>
+              </div>
+          </div>
+      </div>
+  </div>
+  </header>

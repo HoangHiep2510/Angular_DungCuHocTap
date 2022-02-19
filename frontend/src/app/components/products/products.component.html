@@ -1,0 +1,77 @@
+<main role="main">
+  <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
+  <div class="container mt-4">
+      <div id="thongbao" class="alert alert-danger d-none face" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">×</span>
+          </button>
+      </div>
+
+      <div class="card">
+          <div class="container-fliud">
+              <div name="frmsanphamchitiet" id="frmsanphamchitiet">
+                  <input type="hidden" name="sp_ma" id="sp_ma" value="5">
+                  <input type="hidden" name="sp_ten" id="sp_ten" value="Samsung Galaxy Tab 10.1 3G 16G">
+                  <input type="hidden" name="sp_gia" id="sp_gia" value="10990000.00">
+                  <input type="hidden" name="hinhdaidien" id="hinhdaidien" value="samsung-galaxy-tab-10.jpg">
+
+                  <div class="wrapper row">
+                      <div class="preview col-md-6">
+                          <div class="preview-pic tab-content">
+                              <div class="tab-pane active" id="pic-1" style="object-fit: cover;">
+                                  <img [src]="product.hinhminhhoa">
+                              </div>
+                              <div class="tab-pane" id="pic-2">
+                                  <img [src]="product.hinhchitiet">
+                              </div>
+                          </div>
+                          <ul class="preview-thumbnail nav nav-tabs">
+                              <li class="active">
+                                  <a data-target="#pic-1" data-toggle="tab" class="">
+                                      <img [src]="product.hinhminhhoa">
+                                  </a>
+                              </li>
+                              <li class="">
+                                  <a data-target="#pic-2" data-toggle="tab" class="">
+                                      <img [src]="product.hinhchitiet">
+                                  </a>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="details col-md-6">
+                          <h1 class="product-title">{{product.tensanpham}}</h1>
+                          <div class="rating">
+                              <div class="stars">
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star"></span>
+                                  <span class="fa fa-star"></span>
+                              </div>
+                          </div>
+                          <h4 class="price">Giá hiện tại: <span>{{product.gia}} vnđ</span></h4>
+                          <p class="vote"><strong>100%</strong> hàng <strong>Chất lượng</strong>, đảm bảo
+                              <strong>Uy
+                                  tín</strong>!</p>
+                          <div class="form-group">
+                              <label style="font-size: 15px;">Số lượng đặt mua:</label>
+                              <div style="display: flex;">
+                                <button (click)="Decrease()" class="btn_num num_1 button button_qty" type="button" style="width: 50px;">-</button>
+                                <input type="number" value="{{product?.soluong >= 1 ? 1 : 0}}" maxlength=" 5 " class="form-control"
+                                style="width: 25%; font-size: 18px; text-align: center;"
+                                [max]="product?.soluong >= 1 ? product?.soluong: 0" readonly #soluong>
+                                <button (click)="Increase()" class="btn_num num_2 button button_qty " type="button" style="width: 50px;">+</button>
+                              </div>
+                          </div>
+                          <div class="action">
+                              <a class="add-to-cart btn btn-default" (click)="addToCart(product?.masanpham)">Thêm vào giỏ hàng</a>
+                          </div>
+                      </div>
+
+                  </div>
+                </div>
+          </div>
+      </div>
+  </div>
+  <!-- End block content -->
+</main>
